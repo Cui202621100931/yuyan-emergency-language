@@ -8,7 +8,7 @@ COPY package.json ./
 COPY server ./server
 COPY public ./public
 COPY data ./data
-COPY scripts ./scripts
+
 
 EXPOSE 8080
 CMD ["node", "server/index.js"]
