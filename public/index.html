@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>语安 · 应急语言服务｜志愿者岗前培训与现场知识查询</title>
+    <meta
+      name="description"
+      content="语安是面向应急语言服务志愿者与基层培训教师的岗前培训与现场知识查询平台：多语翻译、术语库、平行语料、可溯源问答与多源资讯聚合。"
+    />
+    <meta name="theme-color" content="#0d1b26" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230d1b26'/%3E%3Cpath d='M18 40V24h6l8 10 8-10h6v16h-5V30l-7 9h-4l-7-9v10z' fill='%23f7f4ee'/%3E%3Ccircle cx='32' cy='47' r='3' fill='%23e2502a'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳到主要内容</a>
+
+    <header class="site-head" id="siteHead">
+      <div class="wrap head-inner">
+        <a class="brand" href="#/" aria-label="语安首页">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 40 40" width="34" height="34">
+              <rect x="1" y="1" width="38" height="38" rx="10" fill="none" stroke="currentColor" stroke-width="1.6" />
+              <path d="M10 27V13h4.6l5.4 6.9L25.4 13H30v14h-3.6v-8.4L21 26h-2l-5.4-7.4V27z" fill="currentColor" />
+              <circle cx="20" cy="32" r="1.9" fill="#e2502a" />
+            </svg>
+          </span>
+          <span class="brand-text">
+            <strong>语安</strong>
+            <small>应急语言服务</small>
+          </span>
+        </a>
+
+        <nav class="nav" id="nav" aria-label="主导航">
+          <a href="#/" data-nav="home">首页</a>
+          <a href="#/news" data-nav="news">资讯聚合</a>
+          <a href="#/translate" data-nav="translate">多语翻译</a>
+          <a href="#/terms" data-nav="terms">术语库</a>
+          <a href="#/corpus" data-nav="corpus">平行语料</a>
+          <a href="#/qa" data-nav="qa">智能问答</a>
+          <a href="#/training" data-nav="training">岗前微课</a>
+          <a href="#/about" data-nav="about">关于</a>
+        </nav>
+
+        <div class="head-tools">
+          <span class="mode-chip" id="modeChip" title="当前数据为教学演练快照">演练数据</span>
+          <button class="icon-btn" id="textSizeBtn" type="button" aria-pressed="false" title="切换大字号 / 无障碍阅读">大字</button>
+          <a class="btn btn-sm btn-accent" href="#/translate">现场翻译</a>
+          <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="nav" aria-label="展开菜单">菜单</button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main" class="wrap" tabindex="-1"></main>
+
+    <footer class="site-foot">
+      <div class="wrap foot-grid">
+        <div class="foot-brand">
+          <div class="brand brand-foot">
+            <span class="brand-mark" aria-hidden="true">
+              <svg viewBox="0 0 40 40" width="30" height="30">
+                <rect x="1" y="1" width="38" height="38" rx="10" fill="none" stroke="currentColor" stroke-width="1.6" />
+                <path d="M10 27V13h4.6l5.4 6.9L25.4 13H30v14h-3.6v-8.4L21 26h-2l-5.4-7.4V27z" fill="currentColor" />
+                <circle cx="20" cy="32" r="1.9" fill="#e2502a" />
+              </svg>
+            </span>
+            <span class="brand-text"><strong>语安</strong><small>应急语言服务</small></span>
+          </div>
+          <p>面向应急语言服务志愿者与基层培训教师的岗前培训与现场知识查询平台。到岗即用，用中不犯错。</p>
+        </div>
+        <div class="foot-col">
+          <h4>核心功能</h4>
+          <a href="#/news">外语信息聚合</a>
+          <a href="#/translate">多语种翻译</a>
+          <a href="#/terms">术语管理</a>
+          <a href="#/corpus">平行语料库</a>
+          <a href="#/qa">可溯源问答</a>
+        </div>
+        <div class="foot-col">
+          <h4>现场工具</h4>
+          <a href="#/training">岗前微课与测评</a>
+          <a href="#/training#cards">多语话术卡</a>
+          <a href="#/news">多源资讯快照</a>
+          <a href="#/about">数据来源与合规</a>
+        </div>
+        <div class="foot-col foot-meta">
+          <h4>课程实训</h4>
+          <p>《人工智能辅助翻译》课程实训作品</p>
+          <p>站点数据为教学演练快照，不构成真实灾情通报。</p>
+          <p class="mono" id="footStamp">—</p>
+        </div>
+      </div>
+      <div class="wrap foot-bottom">
+        <span>© 2026 语安 · 应急语言服务</span>
+        <span>演示地址：<span class="mono" id="footUrl">—</span></span>
+        <span>建议在 Chrome / Edge / Safari 最新版使用</span>
+      </div>
+    </footer>
+
+    <div class="toast-wrap" id="toastWrap" aria-live="polite"></div>
+    <div class="modal-root" id="modalRoot" hidden></div>
+    <div id="printHolder" aria-hidden="true"></div>
+
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>

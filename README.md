@@ -98,6 +98,18 @@ node scripts/scrape-news.mjs    # 抓取最新资讯快照（需要外网）
 
 ## 四、上线部署（公网 + HTTPS）
 
+> **大陆网络优先看这里**：Render 在部分网络被阻断（实测 `render.com` 超时），推荐**腾讯云 CloudBase 云托管**——上海节点、默认 HTTPS 域名、无需自己备案，项目自带 Dockerfile 可直接部署。逐步操作见 [docs/部署到腾讯云CloudBase.md](docs/部署到腾讯云CloudBase.md)。
+>
+> 下面保留 Render、轻量服务器和临时隧道三种方案，供有条件时选择。
+
+### 方案 0：腾讯云 CloudBase 云托管（大陆推荐）
+
+1. 先把项目推送到 GitHub 或 Gitee（见 [docs/推送到GitHub.md](docs/推送到GitHub.md)）。
+2. 打开 <https://tcb.cloud.tencent.com/dev>，实名后创建**免费体验环境**（上海）。
+3. 云托管 → 新建服务 → **Git 部署**，选仓库与 `main` 分支，端口填 **8080**。
+4. 环境变量填 `DEEPSEEK_API_KEY`、`BIGMODEL_API_KEY`、`ADMIN_TOKEN`、`PORT=8080`。
+5. 部署完成后得到 `https://<服务名>-xxxx.ap-shanghai.app.tcloudbase.com`。
+
 ### 方案 A：Render（最快，免费额度足够课程演示）
 
 1. 把**项目根目录**推送到 GitHub 仓库。“本目录”指本 README 所在的 `emergency-lang-service/` 文件夹（里面直接有 `package.json`、`server/`、`public/`），不是它的上级目录；不会操作见 [docs/推送到GitHub.md](docs/推送到GitHub.md)。
