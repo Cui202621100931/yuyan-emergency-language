@@ -1,0 +1,12 @@
+# 依赖与本地环境
+node_modules/
+.env
+.env.local
+*.log
+
+# 运行时缓存（含向量缓存、机译缓存，可删除后重建）
+data/cache/
+data/embeddings.cache.json
+
+# 截图临时文件
+screenshots/raw/

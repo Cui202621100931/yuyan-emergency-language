@@ -1,0 +1,25 @@
+{
+  "name": "yuyan-emergency-language-service",
+  "version": "1.0.0",
+  "private": true,
+  "description": "语安 · 应急语言服务志愿者岗前培训与知识查询平台（《人工智能辅助翻译》课程实训）",
+  "type": "module",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js",
+    "scrape": "node scripts/scrape-news.mjs",
+    "index": "node scripts/build-index.mjs",
+    "smoke": "node scripts/smoke-test.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "emergency-language-service",
+    "translation",
+    "terminology",
+    "rag"
+  ],
+  "license": "MIT"
+}

@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: yuyan-emergency-language
+    runtime: node
+    plan: free
+    buildCommand: "node -v"
+    startCommand: "node server/index.js"
+    healthCheckPath: /api/health
+    envVars:
+      - key: DEEPSEEK_API_KEY
+        sync: false
+      - key: BIGMODEL_API_KEY
+        sync: false
+      - key: DEEPSEEK_MODEL
+        value: deepseek-chat
+      - key: BIGMODEL_EMBEDDING_MODEL
+        value: embedding-3
+      - key: ADMIN_TOKEN
+        generateValue: true
+      - key: ENABLE_PUBLIC_MT
+        value: "true"
