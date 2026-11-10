@@ -7,6 +7,7 @@ import { loadAll, store, listTerms, getTerm, listCorpus, listNews, addChunk, sta
 import { translate, languageOptions } from "./lib/translate.js";
 import { ask, kbStatus } from "./lib/rag.js";
 import { engineStatus } from "./lib/llm.js";
+import { diagnose } from "./lib/diagnostics.js";
 
 const publicDir = path.join(config.root, "public");
 const MIME = {
@@ -214,6 +215,11 @@ async function handleApi(req, res, url) {
     const doc = store.docs[id];
     if (!doc) return send(res, 404, { error: "文档不存在" });
     return send(res, 200, { id, ...doc, chunks: store.kb.filter((k) => k.docId === id) });
+  }
+
+  if (p === "/api/diagnostics" && method === "GET") {
+    if (limited(ip, "diag", 6)) return send(res, 429, { error: "请求过于频繁，请稍候再试" });
+    return send(res, 200, await diagnose());
   }
 
   if (p === "/api/term-match" && method === "POST") {

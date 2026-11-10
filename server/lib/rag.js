@@ -53,7 +53,8 @@ async function retrieve(question, k = 4) {
         }
       }
     } catch (e) {
-      // 静默降级
+      // 记录真实原因，便于在 CloudBase 日志中排查；对外仍降级为本地检索
+      console.error("[BigModel] 向量检索失败，已降级本地 TF-IDF：", e.message);
     }
   }
   const hits = searchKB(question, k).map((r) => ({ chunk: r.item, score: r.score }));
